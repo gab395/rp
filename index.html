@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rossettini Prime | Criação de sites e landing pages</title>
+<meta name="description" content="Rossettini Prime: criação de sites e landing pages, social media, edição audiovisual e automação de processos. Transformando empresas em marcas.">
+<meta property="og:title" content="Rossettini Prime | Transformando empresas em marcas.">
+<meta property="og:description" content="Sites e landing pages profissionais que fortalecem sua marca.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0c10">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230a0c10'/><text x='16' y='22' font-size='15' font-weight='800' text-anchor='middle' fill='%232f6bff' font-family='Arial'>RP</text></svg>">
+<style>
+:root{--bg:#0a0c10;--panel:#12151c;--panel2:#181c25;--line:#252a36;--text:#fff;--muted:#a8b0c0;--blue:#2f6bff;--blue2:#5b8cff;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--text);font:400 1rem/1.65 "Segoe UI",Inter,system-ui,-apple-system,Roboto,Arial,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}ul,ol{list-style:none}
+:focus-visible{outline:2px solid var(--blue2);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--blue);padding:8px 14px;border-radius:8px;z-index:100}.skip:focus{left:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.container{width:min(1160px,100% - 40px);margin-inline:auto}
+h1,h2,h3{line-height:1.12;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,5.4vw,4rem);font-weight:800}
+h1 em{font-style:normal;color:var(--blue2)}
+h2{font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:700}
+.section{padding:clamp(64px,9vw,110px) 0}
+.head{max-width:720px;margin-bottom:44px}.head p{color:var(--muted);margin-top:12px}
+.kicker{color:var(--blue2);font-weight:600;font-size:.82rem;letter-spacing:.14em;margin-bottom:18px}
+
+/* header */
+.header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(10,12,16,.78);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.header.scrolled{border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em;font-size:.9rem}
+.brand-rp{display:grid;place-items:center;width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--blue),#1c3fa8);letter-spacing:0}
+.menu{display:flex;align-items:center;gap:28px}
+.menu a:not(.btn){color:var(--muted);font-size:.95rem;transition:color .2s}.menu a:not(.btn):hover{color:#fff}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;flex-direction:column;justify-content:center;gap:6px;align-items:center}
+.burger span{width:24px;height:2px;background:#fff;transition:.3s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border-radius:10px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 28px -8px rgba(47,107,255,.7)}
+.btn-primary:hover{transform:translateY(-2px);background:#4378ff;box-shadow:0 12px 34px -8px rgba(47,107,255,.9)}
+.btn-ghost{border-color:var(--line);background:rgba(255,255,255,.03)}.btn-ghost:hover{border-color:var(--blue2);transform:translateY(-2px)}
+.btn-sm{padding:10px 20px;font-size:.92rem}.btn-lg{padding:18px 40px;font-size:1.1rem}
+.link{color:var(--blue2);font-weight:600}.link:hover{text-decoration:underline}
+
+/* hero */
+.hero{padding:150px 0 90px;background:radial-gradient(900px 500px at 80% 20%,rgba(47,107,255,.16),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.lead{color:var(--muted);font-size:1.12rem;margin:22px 0 32px;max-width:540px}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-visual{position:relative;min-height:380px}
+.glow{position:absolute;inset:10% 5%;background:radial-gradient(circle,rgba(47,107,255,.35),transparent 65%);filter:blur(30px)}
+.laptop{position:absolute;left:0;top:30px;width:84%}
+.screen{aspect-ratio:16/10;background:var(--panel);border:6px solid #2a2f3b;border-radius:14px 14px 0 0;padding:10px;overflow:hidden}
+.base{height:12px;background:linear-gradient(#2a2f3b,#171a21);border-radius:0 0 14px 14px;width:112%;margin-left:-6%}
+.phone{position:absolute;right:0;bottom:0;width:30%;aspect-ratio:9/18;background:var(--panel);border:5px solid #2a2f3b;border-radius:22px;padding:10px;box-shadow:0 20px 50px rgba(0,0,0,.5);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.m-bar{display:flex;gap:4px;margin-bottom:8px}.m-bar i{width:6px;height:6px;border-radius:50%;background:#3a4050}
+.m-hero{height:46%;border-radius:8px;background:linear-gradient(135deg,var(--blue),#0e1f5c 70%)}.m-hero.small{height:35%}
+.m-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}.m-row b{height:34px;border-radius:6px;background:var(--panel2);border:1px solid var(--line)}
+.m-line{height:7px;border-radius:4px;background:var(--line);margin-top:10px}.m-line.short{width:60%}
+.m-btn{height:22px;border-radius:6px;background:var(--blue);margin-top:14px}
+
+/* cards */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:linear-gradient(180deg,var(--panel),#0f1218);border:1px solid var(--line);border-radius:var(--r);padding:30px;display:flex;flex-direction:column;gap:14px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);border-color:rgba(91,140,255,.55);box-shadow:0 18px 40px -20px rgba(47,107,255,.5)}
+.card p{color:var(--muted)}.card .link{margin-top:auto}
+.main-card{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:12px 40px;padding:40px;border-color:rgba(91,140,255,.4);background:radial-gradient(600px 300px at 0 0,rgba(47,107,255,.18),transparent 70%),var(--panel)}
+.main-card .icon,.main-card h3,.main-card p{grid-column:1}.main-card h3{font-size:1.7rem}
+.main-card .ticks{grid-column:2;grid-row:1/5;align-self:center}.main-card .btn{grid-column:1;justify-self:start;margin-top:8px}
+.icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:rgba(47,107,255,.14);border:1px solid rgba(91,140,255,.35)}
+.icon svg{width:24px;height:24px;fill:none;stroke:var(--blue2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ticks li{padding:11px 0 11px 30px;border-bottom:1px solid var(--line);position:relative}
+.ticks li::before{content:"";position:absolute;left:4px;top:19px;width:10px;height:6px;border-left:2px solid var(--blue2);border-bottom:2px solid var(--blue2);transform:rotate(-45deg)}
+
+/* portfolio */
+.portfolio{background:linear-gradient(180deg,transparent,rgba(47,107,255,.07),transparent)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.project{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.project:hover{transform:translateY(-6px);border-color:var(--blue2)}
+.shot{position:relative;aspect-ratio:16/10;padding:14px;background:var(--panel2)}
+.shot .m-hero{height:50%}
+.s-barber .m-hero{background:linear-gradient(135deg,#1b1b1b,#6b4a2b)}
+.s-rest .m-hero{background:linear-gradient(135deg,#8a2f12,#e08a2e)}
+.s-moda .m-hero{background:linear-gradient(135deg,#111,#555 60%,#bdbdbd)}
+.tag-ill{position:absolute;right:10px;top:10px;font-size:.7rem;background:rgba(0,0,0,.6);padding:3px 9px;border-radius:99px;color:var(--muted)}
+.shot-img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.p-body{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.p-body p{color:var(--muted);font-size:.96rem}.p-body .btn{align-self:flex-start;margin-top:auto}
+.cat{color:var(--blue2);font-size:.85rem;font-weight:600}
+
+/* about */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.about p{color:var(--muted);margin-top:18px}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pillars li{padding:26px 20px;border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:10px;background:var(--panel)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.steps::before{content:"";position:absolute;left:24px;right:24px;top:24px;height:2px;background:linear-gradient(90deg,var(--blue),var(--line))}
+.steps li{position:relative}.steps h3{margin:18px 0 8px}.steps p{color:var(--muted);font-size:.95rem}
+.n{position:relative;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--bg);border:2px solid var(--blue);font-weight:800;box-shadow:0 0 22px rgba(47,107,255,.5)}
+
+/* cta */
+.cta{text-align:center;padding:clamp(48px,7vw,84px) 24px;border:1px solid rgba(91,140,255,.4);border-radius:22px;background:radial-gradient(600px 300px at 50% 0,rgba(47,107,255,.28),transparent 70%),var(--panel)}
+.cta p{color:var(--muted);margin:16px auto 32px;max-width:520px}
+.socials{display:flex;justify-content:center;gap:18px;margin-top:28px;flex-wrap:wrap}.socials a{color:var(--muted)}.socials a:hover{color:#fff}
+
+/* footer */
+.footer{border-top:1px solid var(--line);padding-top:48px}
+.foot{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.foot p{color:var(--muted);margin-top:12px}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:flex-start;color:var(--muted)}.foot nav a:hover{color:#fff}
+.copy{text-align:center;color:var(--muted);font-size:.85rem;padding:32px 20px}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.4);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}.wa-float svg{width:28px;fill:none;stroke:#fff;stroke-width:2;stroke-linejoin:round}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.reveal.in{opacity:1;transform:none}
+
+@media(max-width:960px){
+ .hero-grid,.about{grid-template-columns:1fr}.hero-visual{min-height:340px;max-width:520px}
+ .services,.projects{grid-template-columns:1fr 1fr}.main-card{grid-template-columns:1fr}
+ .main-card .ticks{grid-column:1;grid-row:auto}.steps{grid-template-columns:1fr 1fr}.steps::before{display:none}
+ .burger{display:flex}
+ .menu{position:fixed;inset:72px 0 auto;flex-direction:column;align-items:stretch;gap:0;padding:12px 20px 24px;background:rgba(10,12,16,.97);border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .35s;visibility:hidden}
+ .menu.open{transform:none;visibility:visible}
+ .menu a:not(.btn){padding:14px 4px;border-bottom:1px solid var(--line);font-size:1.05rem}.menu-cta{margin-top:16px}
+}
+@media(max-width:620px){
+ .services,.projects,.steps,.pillars{grid-template-columns:1fr}.hero{padding-top:120px}
+ .actions .btn{width:100%}.main-card{padding:28px}.hero-visual{min-height:300px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#inicio">Ir para o conteúdo</a>
+
+<header class="header" id="topo">
+  <div class="container nav">
+    <!-- Para usar a logo oficial, troque este bloco por <img src="img/logo.png" alt="Rossettini Prime"> -->
+    <a href="#inicio" class="brand" aria-label="Rossettini Prime - início"><span class="brand-rp">RP</span><span class="brand-name">ROSSETTINI PRIME</span></a>
+    <nav id="menu" class="menu" aria-label="Principal">
+      <a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+      <a href="#contato" class="btn btn-primary btn-sm menu-cta" data-whatsapp>Fale conosco</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <p class="kicker">SOLUÇÕES DIGITAIS PARA O SEU NEGÓCIO</p>
+      <h1>Transformamos sua <em>presença digital</em> em <em>oportunidades.</em></h1>
+      <p class="lead">Criamos sites e landing pages profissionais que fortalecem sua marca, apresentam seus serviços e ajudam sua empresa a conquistar novas oportunidades no digital.</p>
+      <div class="actions">
+        <a href="#contato" class="btn btn-primary" data-whatsapp>Quero criar meu site</a>
+        <a href="#portfolio" class="btn btn-ghost">Conheça nossos projetos</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="glow"></div>
+      <div class="laptop"><div class="screen"><div class="m-bar"><i></i><i></i><i></i></div><div class="m-hero"></div><div class="m-row"><b></b><b></b><b></b></div></div><div class="base"></div></div>
+      <div class="phone"><div class="m-hero small"></div><div class="m-line"></div><div class="m-line short"></div><div class="m-btn"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="servicos">
+  <div class="container">
+    <div class="head"><h2>Soluções para cada etapa da sua marca</h2><p>Do site à rotina da empresa, tudo pensado para o seu negócio.</p></div>
+    <div class="services">
+      <article class="card main-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Criação de Sites e Landing Pages</h3>
+        <p>Desenvolvemos sites modernos, responsivos e personalizados para apresentar sua empresa, valorizar sua marca e criar uma presença digital profissional.</p>
+        <ul class="ticks">
+          <li>Sites institucionais</li><li>Landing pages para captação de contatos</li><li>Páginas de apresentação de serviços</li><li>Sites para restaurantes, barbearias e lojas</li><li>Páginas responsivas para computadores, tablets e celulares</li>
+        </ul>
+        <a href="#contato" class="btn btn-primary" data-whatsapp="Olá! Quero informações sobre criação de sites e landing pages.">Solicitar informações</a>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg></div>
+        <h3>Social Media</h3>
+        <p>Criamos conteúdos estratégicos para fortalecer a identidade da sua marca e melhorar sua comunicação com o público.</p>
+        <a class="link" href="#contato" data-whatsapp="Olá! Quero informações sobre Social Media.">Solicitar informações</a>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 10l4-2v8l-4-2"/></svg></div>
+        <h3>Audiovisual e Edição</h3>
+        <p>Editamos vídeos e produzimos materiais audiovisuais que ajudam sua empresa a comunicar ideias, apresentar produtos e valorizar sua presença digital.</p>
+        <a class="link" href="#contato" data-whatsapp="Olá! Quero informações sobre Audiovisual e Edição.">Solicitar informações</a>
+      </article>
+      <article class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h3>Automação de Processos</h3>
+        <p>Desenvolvemos soluções para simplificar tarefas repetitivas, organizar processos e melhorar a eficiência da operação.</p>
+        <a class="link" href="#contato" data-whatsapp="Olá! Quero informações sobre Automação de Processos.">Solicitar informações</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="head"><h2>Projetos que transformam ideias em experiências digitais.</h2><p>Conheça alguns dos projetos desenvolvidos pela Rossettini Prime.</p></div>
+    <div class="projects">
+      <!-- Para usar capturas reais: troque o bloco .shot por <img class="shot-img" src="img/barbearia.jpg" alt="Prévia do site da barbearia" loading="lazy"> -->
+      <article class="project">
+        <div class="shot s-barber" role="img" aria-label="Mockup ilustrativo do site de barbearia"><span class="tag-ill">Prévia ilustrativa</span><div class="m-bar"><i></i><i></i><i></i></div><div class="m-hero"></div><div class="m-row"><b></b><b></b><b></b></div></div>
+        <div class="p-body"><span class="cat">Barbearia</span><h3>Barbearia</h3>
+          <p>Projeto de site para barbearia, desenvolvido para apresentar o negócio, seus serviços e sua identidade visual em uma experiência digital moderna.</p>
+          <a class="btn btn-primary btn-sm" href="https://gab395.github.io/Barber/" target="_blank" rel="noopener noreferrer">Visitar projeto<span class="sr"> (abre em nova aba)</span></a></div>
+      </article>
+      <article class="project">
+        <div class="shot s-rest" role="img" aria-label="Mockup ilustrativo do site do restaurante Bendito Tempero"><span class="tag-ill">Prévia ilustrativa</span><div class="m-bar"><i></i><i></i><i></i></div><div class="m-hero"></div><div class="m-row"><b></b><b></b><b></b></div></div>
+        <div class="p-body"><span class="cat">Restaurante</span><h3>Bendito Tempero</h3>
+          <p>Projeto de site para restaurante, pensado para valorizar sua identidade, apresentar o estabelecimento e facilitar o acesso às informações do negócio.</p>
+          <a class="btn btn-primary btn-sm" href="https://gab395.github.io/restaurante/" target="_blank" rel="noopener noreferrer">Visitar projeto<span class="sr"> (abre em nova aba)</span></a></div>
+      </article>
+      <article class="project">
+        <div class="shot s-moda" role="img" aria-label="Mockup ilustrativo da loja virtual de moda"><span class="tag-ill">Prévia ilustrativa</span><div class="m-bar"><i></i><i></i><i></i></div><div class="m-hero"></div><div class="m-row"><b></b><b></b><b></b></div></div>
+        <div class="p-body"><span class="cat">Moda / Loja virtual</span><h3>Moda</h3>
+          <p>Projeto de loja virtual de moda, com proposta visual urbana e foco na apresentação de produtos e na experiência de navegação.</p>
+          <a class="btn btn-primary btn-sm" href="https://gab395.github.io/moda/" target="_blank" rel="noopener noreferrer">Visitar projeto<span class="sr"> (abre em nova aba)</span></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sobre">
+  <div class="container about">
+    <div><h2>Mais do que serviços digitais. Soluções para sua marca.</h2>
+      <p>A Rossettini Prime reúne soluções digitais para empresas que desejam fortalecer sua presença, melhorar sua comunicação e otimizar seus processos. Nosso objetivo é compreender as necessidades de cada negócio e desenvolver soluções alinhadas aos seus objetivos.</p></div>
+    <ul class="pillars">
+      <li><b>Estratégia</b></li><li><b>Criatividade</b></li><li><b>Tecnologia</b></li><li><b>Personalização</b></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section steps-sec" id="como-funciona">
+  <div class="container">
+    <div class="head"><h2>Como funciona</h2></div>
+    <ol class="steps">
+      <li><span class="n">1</span><h3>Entendimento</h3><p>Conhecemos o negócio, os objetivos e as necessidades do cliente.</p></li>
+      <li><span class="n">2</span><h3>Planejamento</h3><p>Definimos a estrutura e a direção visual da solução.</p></li>
+      <li><span class="n">3</span><h3>Desenvolvimento</h3><p>Construímos o projeto e realizamos os ajustes necessários.</p></li>
+      <li><span class="n">4</span><h3>Entrega</h3><p>Apresentamos o resultado final e orientamos o cliente sobre a utilização.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="contato">
+  <div class="container cta">
+    <h2>Seu próximo projeto começa aqui.</h2>
+    <p>Vamos conversar sobre o que sua empresa precisa para fortalecer sua presença digital?</p>
+    <a class="btn btn-primary btn-lg" href="#" data-whatsapp>Vamos conversar</a>
+    <ul class="socials" id="socials" aria-label="Redes sociais"></ul>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container foot">
+    <div><a href="#inicio" class="brand"><span class="brand-rp">RP</span><span class="brand-name">ROSSETTINI PRIME</span></a><p>Transformando empresas em marcas.</p></div>
+    <nav aria-label="Rodapé"><a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a><a href="#" data-whatsapp>WhatsApp</a></nav>
+  </div>
+  <p class="copy">© <span id="year">2026</span> Rossettini Prime. Todos os direitos reservados.</p>
+</footer>
+
+<a href="#" class="wa-float" data-whatsapp aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/></svg></a>
+
+<script>
+/* ===== CONFIGURAÇÃO ===== */
+// WhatsApp oficial: país + DDD + número, só dígitos. Ex.: "5511978645795". Deixe vazio até ter o número.
+const WHATSAPP_NUMBER = "5511978645795";
+const WHATSAPP_MESSAGE = "Olá! Vim pelo site da Rossettini Prime e gostaria de conversar sobre um projeto.";
+
+// Redes sociais: preencha só com endereços oficiais. Vazio = não aparece.
+const SOCIALS = [
+  { name: "Instagram", url: "" },
+  // { name: "LinkedIn", url: "" },
+];
+
+/* ===== WhatsApp ===== */
+const waLinks = document.querySelectorAll("[data-whatsapp]");
+waLinks.forEach(a => {
+  a.addEventListener("click", e => {
+    e.preventDefault();
+    if (!WHATSAPP_NUMBER) {
+      alert("O número de WhatsApp ainda não foi configurado. Edite WHATSAPP_NUMBER no script.js.");
+      return;
+    }
+    const text = a.dataset.whatsapp || WHATSAPP_MESSAGE;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+  });
+});
+
+/* ===== Redes sociais (só as configuradas) ===== */
+const socialsEl = document.getElementById("socials");
+const active = SOCIALS.filter(s => s.url);
+if (active.length) {
+  active.forEach(s => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = s.url; a.textContent = s.name; a.target = "_blank"; a.rel = "noopener noreferrer";
+    li.appendChild(a); socialsEl.appendChild(li);
+  });
+} else socialsEl.remove();
+
+/* ===== Menu mobile ===== */
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+const setMenu = open => {
+  menu.classList.toggle("open", open);
+  burger.setAttribute("aria-expanded", open);
+  burger.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+};
+burger.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
+menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+
+/* ===== Cabeçalho ao rolar ===== */
+const header = document.querySelector(".header");
+const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 10);
+onScroll();
+window.addEventListener("scroll", onScroll, { passive: true });
+
+/* ===== Animações de entrada ===== */
+const items = document.querySelectorAll(".head, .card, .project, .about > *, .steps li, .cta");
+items.forEach(el => el.classList.add("reveal"));
+if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  items.forEach(el => io.observe(el));
+} else items.forEach(el => el.classList.add("in"));
+
+/* ===== Ano do rodapé ===== */
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
